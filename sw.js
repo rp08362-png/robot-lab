@@ -1,5 +1,5 @@
-const CACHE = 'robot-lab-shell-v2';
-const ASSETS = ['./','./index.html','./styles.css','./app.js','./config.js','./manifest.webmanifest','./robot-main.jpg','./icon-192.png','./icon-512.png','./icon-maskable-512.png'];
+const CACHE = 'robot-lab-shell-v11';
+const ASSETS = ['./','./index.html','./styles.css?v=11','./app.js?v=11','./config.js','./manifest.webmanifest?v=11','./robot-main.jpg','./icon-192.png','./icon-512.png','./icon-maskable-512.png'];
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch', e => {

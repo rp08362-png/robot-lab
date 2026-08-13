@@ -4,5 +4,5 @@ export const CONFIG = {
   ownerEmail: "owner@arquivo.local",
   rowSlug: "robot-lab-v1",
   storageBucket: "project-files",
-  appVersion: "1.1.0"
+  appVersion: "1.2.0"
 };

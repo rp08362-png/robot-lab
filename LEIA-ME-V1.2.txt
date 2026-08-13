@@ -1,0 +1,17 @@
+ROBOT LAB V1.2
+
+Esta atualização corrige dois problemas:
+1) Ícone PWA: usa manifest + ícones com nomes totalmente novos para impedir o Chrome/Android de reutilizar o ícone antigo. O novo ícone usa um close-up do robot, legível mesmo em tamanho pequeno.
+2) Sincronização: passa a usar o mesmo modelo storage-backed da aplicação dos móveis:
+   project-files/{user_id}/development/robot-lab-v1/project.json
+
+ATUALIZAR:
+- GitHub > robot-lab > Add file > Upload files
+- Extrair este ZIP e enviar TODOS os ficheiros para a raiz.
+- Commit changes.
+- Esperar o GitHub Pages atualizar.
+- No Chrome: Definições do site > eliminar dados deste site (ou limpar dados do site para github.io), fechar o Chrome e abrir novamente.
+- Desinstalar a PWA antiga, se ainda existir.
+- Abrir https://rp08362-png.github.io/robot-lab/ e instalar novamente.
+
+Os ficheiros antigos podem ficar no repositório; a V1.2 usa nomes novos e deixa de lhes fazer referência.

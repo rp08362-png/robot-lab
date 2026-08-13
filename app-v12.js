@@ -1,4 +1,4 @@
-import { CONFIG } from './config.js';
+import { CONFIG } from './config-v12.js';
 
 const $ = (s, root=document) => root.querySelector(s);
 const $$ = (s, root=document) => [...root.querySelectorAll(s)];
@@ -121,33 +121,53 @@ async function logout(remote=true){
   if(remote && session){try{await api(`${CONFIG.supabaseUrl}/auth/v1/logout`,{method:'POST'});}catch{}}
   session=null;rowId=null;localStorage.removeItem(STORAGE.session);page='home';render();
 }
+function projectJsonPath(){
+  return `${session.user.id}/development/${CONFIG.rowSlug}/project.json`;
+}
 async function loadRemote(){
   if(!session) return;
   syncState='syncing'; drawHeaderState();
   try{
-    const r=await api(`${CONFIG.supabaseUrl}/rest/v1/development_projects?slug=eq.${encodeURIComponent(CONFIG.rowSlug)}&select=id,data,updated_at&limit=1`);
-    if(!r.ok) throw new Error(await r.text());
-    const rows=await r.json();
-    if(rows.length){rowId=rows[0].id; const remote=rows[0].data; if(remote?.schemaVersion){data=mergeData(seedData(),remote);cache();}}
-    else{
-      const payload={user_id:session.user.id,slug:CONFIG.rowSlug,name:'ROBOT LAB',category:'Robotics',version:CONFIG.appVersion,status:'active',progress:'V1',data};
-      const cr=await api(`${CONFIG.supabaseUrl}/rest/v1/development_projects`,{method:'POST',headers:{'Content-Type':'application/json','Prefer':'return=representation'},body:JSON.stringify(payload)});
-      if(!cr.ok) throw new Error(await cr.text()); const made=await cr.json(); rowId=made[0]?.id;
+    const path=projectJsonPath();
+    const r=await api(`${CONFIG.supabaseUrl}/storage/v1/object/authenticated/${CONFIG.storageBucket}/${path}`,{method:'GET'});
+    if(r.status===404 || r.status===400){
+      rowId='storage';
+      await saveRemote();
+      syncState='synced';
+    }else{
+      if(!r.ok) throw new Error(await r.text());
+      const remote=await r.json();
+      if(remote?.schemaVersion){data=mergeData(seedData(),remote);cache();}
+      rowId='storage';
+      syncState='synced';
     }
-    syncState='synced';
-  }catch(e){console.warn(e);syncState='local';toast('Modo local: sincronização indisponível.');}
+  }catch(e){
+    console.warn('ROBOT LAB sync:',e);
+    syncState='local';
+    toast('Dados locais ativos. A sincronização será tentada novamente.');
+  }
   render();
 }
 function mergeData(base,remote){
   return normalizeData({...base,...remote});
 }
 async function saveRemote(){
-  if(!session||!rowId||!navigator.onLine) return;
+  if(!session||!navigator.onLine) return;
   syncState='syncing';drawHeaderState();
   try{
-    const r=await api(`${CONFIG.supabaseUrl}/rest/v1/development_projects?id=eq.${rowId}`,{method:'PATCH',headers:{'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({data,updated_at:now(),status:'active',progress:'V1'})});
-    if(!r.ok) throw new Error(await r.text());syncState='synced';
-  }catch(e){console.warn(e);syncState='local';}
+    const path=projectJsonPath();
+    const r=await api(`${CONFIG.supabaseUrl}/storage/v1/object/${CONFIG.storageBucket}/${path}`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-upsert':'true'},
+      body:JSON.stringify(data)
+    });
+    if(!r.ok) throw new Error(await r.text());
+    rowId='storage';
+    syncState='synced';
+  }catch(e){
+    console.warn('ROBOT LAB save:',e);
+    syncState='local';
+  }
   drawHeaderState();
 }
 
@@ -365,10 +385,10 @@ async function openStoredFile(fileId){const f=data.files.find(x=>x.id===fileId);
 async function installApp(){if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;render();}else toast('No Chrome: menu → Adicionar ao ecrã principal.');}
 
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;render();});
-window.addEventListener('online',()=>{drawHeaderState();if(session){if(rowId)saveRemote();else loadRemote();}});
+window.addEventListener('online',()=>{drawHeaderState();if(session){loadRemote();}});
 window.addEventListener('offline',()=>drawHeaderState());
-if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.warn));
+if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./sw-v12.js').catch(console.warn));
 setInterval(()=>{if(!session)return;data.sensors={...data.sensors,gyro:(Math.random()-.5)*.06,accel:.01+Math.random()*.03,pitch:(Math.random()-.5)*1.4,roll:(Math.random()-.5)*1.4,lastUpdate:now()};if(page==='control'&&controlTab==='diagnostics')render();},2500);
-setInterval(()=>{if(session&&navigator.onLine&&syncState!=='syncing'&&syncState!=='synced'){if(rowId)saveRemote();else loadRemote();}},30000);
+setInterval(()=>{if(session&&navigator.onLine&&syncState!=='syncing'&&syncState!=='synced'){loadRemote();}},30000);
 
 (async()=>{if(session){if(await ensureSession())await loadRemote();else render();}else render();})();

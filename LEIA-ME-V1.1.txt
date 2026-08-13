@@ -1,0 +1,20 @@
+ROBOT LAB V1.1 — atualização
+
+No GitHub > robot-lab > Add file > Upload files:
+1. Extrair este ZIP.
+2. Selecionar TODOS os ficheiros extraídos.
+3. Fazer upload para a raiz do repositório e confirmar substituição dos ficheiros existentes.
+4. Commit changes.
+5. Esperar o GitHub Pages atualizar.
+6. Abrir a PWA. Se o Android mantiver recursos antigos, fechar completamente a app e voltar a abrir; em último caso reinstalar.
+
+V1.1 inclui:
+- rodas/knobs circulares no controlo manual;
+- body map fixo dos 12 DOF;
+- Left Leg / Right Leg / Arms / Head;
+- correção de textos sobrepostos;
+- tabs e layouts responsivos;
+- calibração sem alterar o body map;
+- iconografia Android corrigida;
+- melhoria de sincronização/retry;
+- preservação dos dados e do slug Supabase existente.

@@ -66,3 +66,12 @@ h3.sectionLabel{font-size:13px;margin:23px 2px 10px}.grid2{display:grid;grid-tem
   .knob{width:118px;height:118px}
   .knobPointer{transform:translate(-50%,-50%) rotate(var(--knob-rot)) translateY(-44px)}
 }
+
+/* V1.2 final mobile polish */
+@media (max-width:430px){
+  .hero{overflow:hidden}
+  .hero .metrics{position:relative;z-index:2}
+  .tile{overflow:hidden}
+  .tileCopy{width:100%}
+  .tileCopy strong,.tileCopy span{max-width:100%}
+}
