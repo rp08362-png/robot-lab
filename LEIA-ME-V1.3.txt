@@ -1,0 +1,13 @@
+ROBOT LAB V1.3 — MAX UPDATE
+
+- HUMANOID 180 source-of-truth real
+- BOM + roadmap + architecture + Build/Electronics/Software
+- Simulator V2 com interpolação suave
+- Motion log + Safety state
+- Real Robot connection scaffold /status
+- Real control bloqueado por defeito
+- Firmware H180_ROBOT_CORE_V1.ino com servo output REAL desligado
+- Protocol H180_PROTOCOL_V1.json
+- Login/sync privado/backup preservados
+
+Upload: extrair e enviar TODOS os ficheiros para a raiz do GitHub robot-lab, Commit changes, esperar Pages e reabrir a PWA.

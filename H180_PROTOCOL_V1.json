@@ -1,0 +1,36 @@
+{
+  "name": "HUMANOID 180 Robot Core Protocol",
+  "version": "1.0-draft",
+  "transport": [
+    "HTTP",
+    "WebSocket-future"
+  ],
+  "safety": {
+    "bootState": "E_STOP",
+    "watchdogMs": 1500,
+    "rawUnlimitedPWM": "forbidden",
+    "servoLimits": "firmware-enforced",
+    "phoneRequiredForSafety": false
+  },
+  "endpoints": {
+    "GET /status": {
+      "returns": [
+        "firmware",
+        "status",
+        "dof",
+        "estop",
+        "battery",
+        "imu"
+      ]
+    },
+    "POST /command": {
+      "commands": [
+        "STOP",
+        "STAND_NEUTRAL",
+        "APPLY_POSE",
+        "PLAY_SEQUENCE",
+        "WALK_FORWARD"
+      ]
+    }
+  }
+}
