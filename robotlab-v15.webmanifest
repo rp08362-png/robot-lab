@@ -1,0 +1,32 @@
+{
+  "name": "ROBOT LAB",
+  "short_name": "ROBOT LAB",
+  "description": "Laboratório privado para projetar, documentar, simular e controlar robots.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f5f1",
+  "theme_color": "#f7f5f1",
+  "icons": [
+    {
+      "src": "./robotlab-v12-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./robotlab-v12-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./robotlab-v12-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "./robot-lab"
+}

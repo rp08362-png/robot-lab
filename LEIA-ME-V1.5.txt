@@ -1,0 +1,26 @@
+ROBOT LAB V1.5 — 3D / CAD VIEWER
+
+ADDED
+- Global 3D / CAD Viewer.
+- Open GLB directly from phone storage.
+- Touch orbit + pinch zoom.
+- Front / right / back / left / top / ISO camera views.
+- Reset, fit, fullscreen.
+- Light / dark background and grid.
+- Bounding-box dimensions and centre.
+- Snapshot PNG.
+- AR entry point on supported devices.
+- Save local GLB into a project's private files.
+- Open stored project GLBs directly inside the viewer.
+- Library resource type: model3d.
+- Google model-viewer 4.3.1 pinned in index.html.
+
+UPDATE
+1. Extract this ZIP.
+2. GitHub > robot-lab > Add file > Upload files.
+3. Upload ALL extracted files to the repository root.
+4. Commit changes.
+5. Wait for GitHub Pages.
+6. Fully close ROBOT LAB and reopen.
+
+The old V1.4 files may remain in GitHub; V1.5 references its own versioned assets.
