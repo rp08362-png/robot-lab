@@ -1,0 +1,9 @@
+ROBOT LAB — pacote simplificado para upload pelo telemóvel
+
+1. Extrair este ZIP.
+2. Criar um repositório GitHub chamado robot-lab.
+3. Upload de TODOS os ficheiros extraídos para a raiz do repositório.
+4. Settings > Pages > Source: Deploy from a branch.
+5. Branch: main / Folder: /(root) > Save.
+
+O ficheiro index.html deve aparecer diretamente na página principal do repositório.
