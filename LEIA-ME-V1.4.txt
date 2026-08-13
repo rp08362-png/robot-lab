@@ -1,0 +1,27 @@
+ROBOT LAB V1.4 — MULTI-PROJECT
+
+O objetivo desta versão é corrigir a arquitetura principal da aplicação.
+
+NOVO:
+- Home global da ROBOT LAB.
+- Projects global com + New Project.
+- Ideas é uma área global e independente.
+- Library é global e independente.
+- Control deixa de existir na navegação global.
+- HUMANOID 180 é apenas o primeiro projeto.
+- Ao abrir HUMANOID 180 aparecem Control, Calibration, Build, BOM, Electronics, etc.
+- Novos projetos genéricos têm Overview / Notes / Ideas / Resources / Files.
+- Ideias podem ficar Global / Unassigned ou associadas a um projeto.
+- Ideias globais podem ser convertidas diretamente em projetos.
+- Recursos podem ficar globais ou associados a projetos.
+- Dados antigos são migrados sem apagar o HUMANOID 180.
+
+UPLOAD:
+1. Extrair este ZIP.
+2. GitHub > robot-lab > Add file > Upload files.
+3. Enviar TODOS os ficheiros para a raiz.
+4. Commit changes.
+5. Esperar GitHub Pages atualizar.
+6. Fechar completamente a PWA e voltar a abrir.
+
+Os ficheiros V1.3 antigos podem permanecer no repositório; a V1.4 usa novos nomes.
