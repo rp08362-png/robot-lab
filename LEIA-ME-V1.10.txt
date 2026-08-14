@@ -1,0 +1,21 @@
+ROBOT LAB V1.10 — MANUALS + PHONE BACK
+
+NEW
+- Every project has a dedicated Manuals tab.
+- Manuals contain documents only.
+- PDF, DOC/DOCX, ODT, RTF, TXT, MD and HTML supported.
+- Manuals are private project files.
+- Manuals do NOT appear in generic Files.
+- Project Bundles classify document files inside /Manual/ or /Manuals/ into Manuals.
+- Overview shortcuts to Manuals added where appropriate.
+- Android system Back button / Back gesture now navigates backwards inside ROBOT LAB.
+- Previous project/page/tab and scroll position are restored.
+- Navigation history does not fill up with simulator/sync renders.
+
+UPDATE
+1. Extract this ZIP.
+2. GitHub → robot-lab → Add file → Upload files.
+3. Upload ALL files to repository root.
+4. Commit changes.
+5. Wait for GitHub Pages.
+6. Fully close ROBOT LAB and reopen it.
