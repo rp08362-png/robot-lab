@@ -1,0 +1,23 @@
+ROBOT LAB V1.11 — IN-APP MANUAL READER
+
+NEW
+- Manuals are now readable inside ROBOT LAB, not just stored.
+- PDF: full in-app page reader with previous/next and zoom.
+- DOCX: rendered inside ROBOT LAB.
+- ODT: text/document reader.
+- RTF: text reader.
+- TXT: text reader.
+- Markdown: formatted reader.
+- HTML: sanitized document reader.
+- Android Back returns from a manual to the previous ROBOT LAB screen.
+- Open Original remains available when useful.
+- Legacy .DOC is stored but should be converted to DOCX/PDF for private in-app reading.
+- Reader uses authenticated private file URLs and does not send manuals to external online document viewers.
+
+UPDATE
+1. Extract this ZIP.
+2. GitHub → robot-lab → Add file → Upload files.
+3. Upload ALL files to repository root.
+4. Commit changes.
+5. Wait for GitHub Pages.
+6. Fully close ROBOT LAB and reopen it.
