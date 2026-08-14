@@ -1,0 +1,23 @@
+ROBOT LAB V1.8 — CLEAN PROJECT UI + PREVIEWS + ICONS
+
+CHANGES
+- Imported projects no longer display "PROJECT BUNDLE".
+- TP-7 RADIO V1 is presented as a normal project.
+- Long Source of Truth paths are visually reduced to the source filename.
+- GLB files show a small real 3D preview.
+- Photos show image thumbnails.
+- STL files show an on-device CAD preview.
+- STEP/STP files are triangulated locally with OpenCascade WASM and rendered as a CAD preview.
+- Preview squares are used in 3D Models, Mechanical/CAD, References and Project Files.
+- Edit Project now lets you choose/change/reset the project icon.
+- Custom project icons remain private in authenticated Storage.
+- Project deletion also removes the project's private custom icon.
+- Source of Truth, releases and original backup remain preserved internally.
+
+UPDATE
+1. Extract this ZIP.
+2. GitHub → robot-lab → Add file → Upload files.
+3. Upload ALL files to repository root.
+4. Commit changes.
+5. Wait for GitHub Pages.
+6. Fully close ROBOT LAB and reopen.
