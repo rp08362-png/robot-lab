@@ -1,0 +1,17 @@
+ROBOT LAB V1.9 — RECURSIVE IMPORTER + CSV/CAD READERS
+
+- Full recursive ZIP file discovery.
+- Source of Truth and ASSET_INDEX are metadata only; they cannot filter files out.
+- Case-insensitive mandatory asset classification.
+- BOM CSV detection by headers, original CSV preserved, structured rows parsed.
+- Budget/Premium variants remain separate.
+- /Archive/*.zip kept as backups/releases; nested ZIPs are never recursively extracted.
+- Existing project match by project_id.
+- New Update / Merge / Replace Project Data choices.
+- Final category counts recalculated only after import completes.
+- Featured metadata only changes ordering.
+- CSV files can be read directly inside ROBOT LAB.
+- STEP/STP/STL files now open in the full interactive 3D/CAD viewer.
+- GLB/gltf remain supported by model-viewer.
+
+UPDATE: extract this ZIP, upload all files to GitHub robot-lab root, Commit changes, wait for Pages, then fully close/reopen the PWA.
