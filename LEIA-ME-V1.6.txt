@@ -1,0 +1,29 @@
+ROBOT LAB V1.6 — IMPORT PROJECT BUNDLE
+
+NEW:
+- Projects → Import Project Bundle.
+- Select a ZIP directly on the phone.
+- ZIP is decompressed and classified locally.
+- Automatic Source of Truth detection.
+- Exact support for TP7_RADIO_PROJECT_SOURCE_OF_TRUTH_V0_13.json.
+- Creates TP-7 RADIO V1.
+- Registers V0.13 as current release.
+- GLB → 3D Models.
+- STEP/STL → Mechanical / CAD.
+- CSV/BOM → BOM.
+- Firmware → Firmware.
+- Tests → Bench Tests.
+- Procurement → Procurement.
+- Images → References.
+- Versions → Releases.
+- Original ZIP → private Bundle Backup.
+- Imported TP-7 gets a dedicated project workspace with all these sections.
+- Existing ROBOT LAB multi-project, HUMANOID 180 and 3D Viewer remain intact.
+
+UPDATE:
+1. Extract ZIP.
+2. GitHub → robot-lab → Add file → Upload files.
+3. Upload ALL files to repository root.
+4. Commit changes.
+5. Wait for GitHub Pages.
+6. Fully close ROBOT LAB and reopen it.
