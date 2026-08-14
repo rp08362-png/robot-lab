@@ -1,0 +1,23 @@
+ROBOT LAB V1.7 — EDIT / DELETE PROJECTS
+
+NEW
+- Edit Project in every project workspace.
+- Delete Project in every project workspace.
+- Edit name / type / status / description.
+- Duplicate project names are blocked.
+- Delete requires typing the exact project name.
+- Delete requires explicit permanent-delete confirmation.
+- Project private files are deleted first from authenticated Storage.
+- If private-file deletion fails, the project remains intact.
+- Ideas are preserved and become Global / Unassigned.
+- Library resources are preserved and simply lose the deleted project association.
+- Project-owned BOM/tests/problems/decisions/notes/files/assets/releases/import records are removed.
+- Deleting HUMANOID 180 also resets its old specialized simulator/control state.
+
+UPDATE
+1. Extract this ZIP.
+2. GitHub → robot-lab → Add file → Upload files.
+3. Upload ALL files to repository root.
+4. Commit changes.
+5. Wait for GitHub Pages.
+6. Fully close ROBOT LAB and reopen it.
