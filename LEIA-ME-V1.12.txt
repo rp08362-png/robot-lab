@@ -1,0 +1,20 @@
+ROBOT LAB V1.12 — MOBILE LAYOUT FIX
+
+FIXED
+- Whole application can no longer scroll sideways.
+- Long manual filenames no longer widen the page.
+- Manual rows are redesigned for phone width.
+- Read/Delete controls remain fully visible.
+- Edit Project/Delete Project remain inside the viewport.
+- Project tabs still scroll horizontally by themselves.
+- CAD/CSV/document tables retain their own intended horizontal scrolling.
+- Source-of-Truth paths are clipped/ellipsized instead of widening the app.
+- Manual Reader is constrained to the phone viewport.
+
+UPDATE
+1. Extract this ZIP.
+2. GitHub → robot-lab → Add file → Upload files.
+3. Upload ALL files to repository root.
+4. Commit changes.
+5. Wait for GitHub Pages.
+6. Fully close ROBOT LAB and reopen it.
